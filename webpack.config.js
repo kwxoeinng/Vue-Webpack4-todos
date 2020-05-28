@@ -9,7 +9,7 @@ module.exports = {
         // 输出文件名
         filename: 'bundle.js',
         // 输出路径
-        path: resolve(__dirname, 'dist')
+        path: path.join(__dirname, 'dist')
     },
     // loader的配置
     module: {
@@ -74,7 +74,7 @@ module.exports = {
 
     devServer: {
         // 项目构建后路径
-        contentBase: resolve(__dirname, 'dist'),
+        contentBase: './dist',
         // 启动 gzip 压缩
         compress: true,
         // 端口号
