@@ -1,26 +1,25 @@
-const {
-    resolve
-} = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     // 入口
-    entry: './src/index.js',
+    entry: path.join(__dirname, 'src/index.js'),
     // 输出
     output: {
         // 输出文件名
-        filename: 'js/built.js',
+        filename: 'bundle.js',
         // 输出路径
         path: resolve(__dirname, 'dist')
     },
     // loader的配置
     module: {
         rules: [{
+                // 处理vue资源
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
             {
-                // 处理 css 资源
+                // 处理css资源
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
@@ -75,7 +74,7 @@ module.exports = {
 
     devServer: {
         // 项目构建后路径
-        contentBase: resolve(__dirname, 'build'),
+        contentBase: resolve(__dirname, 'dist'),
         // 启动 gzip 压缩
         compress: true,
         // 端口号
