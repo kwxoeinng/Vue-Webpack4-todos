@@ -8,6 +8,6 @@ Vue+Webpack4实现简易版todo应用
 - 安装npm依赖：```npm install```
 #### 开发环境：
 - 启动项目：```npm run dev```
-- 浏览器预览：localhost:3000
+- 浏览器预览：localhost:8080
 #### 生产环境：
 - 打包：```npm run build```
